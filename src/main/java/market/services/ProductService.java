@@ -10,12 +10,18 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
+
+
+    public List<Product> findAll() {
+        return List.of(new Product());
+    }
 
 
     public Page<Product> findPage(int page, int pageSize) {
